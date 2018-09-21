@@ -57,4 +57,7 @@
     <ItemGroup>
       <PackageReference Update="SkiaSharp.Views.Forms" Version="1.60.3" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\" />
+    </ItemGroup>
 </Project>

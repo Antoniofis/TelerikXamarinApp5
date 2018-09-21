@@ -10,12 +10,15 @@
              xmlns:telerikGrid="clr-namespace:Telerik.XamarinForms.DataGrid;assembly=Telerik.XamarinForms.DataGrid"
              xmlns:telerikBarcode="clr-namespace:Telerik.XamarinForms.Barcode;assembly=Telerik.XamarinForms.Barcode"
              xmlns:telerikConversationalUI="clr-namespace:Telerik.XamarinForms.ConversationalUI;assembly=Telerik.XamarinForms.ConversationalUI"
-             x:Class="TelerikXamarinApp5.Portable.MainPage" Title="MainPage">
+             x:Class="TelerikXamarinApp5.Portable.MainPage" Title="TripLog">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Click Here" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView>
+        <ListView x:Name="trips">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    
+                    <TextCell Text="{Binding Title}"  Detail="{Binding Notes}"  />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
