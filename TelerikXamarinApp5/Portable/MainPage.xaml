@@ -10,6 +10,15 @@
              xmlns:telerikGrid="clr-namespace:Telerik.XamarinForms.DataGrid;assembly=Telerik.XamarinForms.DataGrid"
              xmlns:telerikBarcode="clr-namespace:Telerik.XamarinForms.Barcode;assembly=Telerik.XamarinForms.Barcode"
              xmlns:telerikConversationalUI="clr-namespace:Telerik.XamarinForms.ConversationalUI;assembly=Telerik.XamarinForms.ConversationalUI"
-             x:Class="TelerikXamarinApp5.Portable.MainPage">
-    <Label Text="You are ready to use all controls from UI for XamarinForms suite." HorizontalOptions="Center" VerticalOptions="Center"/>
+             x:Class="TelerikXamarinApp5.Portable.MainPage" Title="MainPage">
+    <ContentPage.Content>
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+   
 </ContentPage>
