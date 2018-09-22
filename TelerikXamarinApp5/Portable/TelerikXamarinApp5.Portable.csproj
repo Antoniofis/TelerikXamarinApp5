@@ -60,4 +60,9 @@
     <ItemGroup>
       <Folder Include="Services\" />
     </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="NewEntryPage.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
 </Project>

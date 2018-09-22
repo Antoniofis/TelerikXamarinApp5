@@ -53,5 +53,10 @@ namespace TelerikXamarinApp5.Portable
 
             trips.ItemsSource = triplogs;
 		}
-	}
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NewEntryPage());
+        }
+    }
 }

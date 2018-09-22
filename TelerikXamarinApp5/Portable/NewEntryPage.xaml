@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TelerikXamarinApp5.Portable"
              xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
              xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
              xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
@@ -10,18 +9,22 @@
              xmlns:telerikGrid="clr-namespace:Telerik.XamarinForms.DataGrid;assembly=Telerik.XamarinForms.DataGrid"
              xmlns:telerikBarcode="clr-namespace:Telerik.XamarinForms.Barcode;assembly=Telerik.XamarinForms.Barcode"
              xmlns:telerikConversationalUI="clr-namespace:Telerik.XamarinForms.ConversationalUI;assembly=Telerik.XamarinForms.ConversationalUI"
-             x:Class="TelerikXamarinApp5.Portable.MainPage" Title="TripLog">
+             x:Class="TelerikXamarinApp5.Portable.NewEntryPage" Title="New Entry">
     <ContentPage.ToolbarItems>
-        <ToolbarItem  Text="Click Here" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Save"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="trips">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Title}"  Detail="{Binding Notes}"  />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </ContentPage.Content>
-   
+        <TableView Intent="Form">
+            <TableView.Root>
+            <TableSection>
+                <EntryCell Label="Title" />
+                <EntryCell Label="Latitude" Keyboard="Numeric"/>
+                <EntryCell Label="Longitude" Keyboard="Numeric"/>
+                <EntryCell Label="Date"/>
+                <EntryCell Label="Rating" Keyboard="Numeric" />
+                <EntryCell Label="Notes"/>
+            </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content> 
 </ContentPage>
