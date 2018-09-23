@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 using TelerikXamarinApp5.Portable.ViewModels;
 using TelerikXamarinApp5.Portable.Models;
+using System.Threading.Tasks;
 
 namespace TelerikXamarinApp5.Portable.ViewModels
 {
-    public class DetailViewModel : BaseViewModel
+    public class DetailViewModel : BaseViewModel<TripLogEntry>
     {
-        public DetailViewModel(TripLogEntry entry)
+        public DetailViewModel()
         {
-            Entry = entry;               
+                      
+        }
+        public override Task Init(TripLogEntry logEntry)
+        {
+            Entry = logEntry;
+
+            return null;
         }
 
         TripLogEntry _tripLog;
@@ -23,6 +30,6 @@ namespace TelerikXamarinApp5.Portable.ViewModels
 
         }
 
-
+      
     }
 }

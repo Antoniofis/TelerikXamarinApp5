@@ -16,11 +16,11 @@ namespace TelerikXamarinApp5.Portable
         }
 
 
-		public DetailPage (TripLogEntry entry)
+		public DetailPage ()
 		{
 			InitializeComponent ();
 
-            BindingContext = new DetailViewModel(entry);
+            BindingContext = new DetailViewModel();
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(_vm.Entry.Latitude, _vm.Entry.Longitude), 

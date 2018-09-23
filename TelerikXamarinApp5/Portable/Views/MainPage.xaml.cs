@@ -28,7 +28,7 @@ namespace TelerikXamarinApp5.Portable
         {
             TripLogEntry trip = (TripLogEntry)e.Item;
 
-            Navigation.PushAsync(new DetailPage(trip));
+            Navigation.PushAsync(new DetailPage());
 
             trips.SelectedItem = null;
         }
