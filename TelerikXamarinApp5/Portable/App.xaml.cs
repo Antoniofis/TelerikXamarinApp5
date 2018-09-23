@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TelerikXamarinApp5.Portable;
 using Xamarin.Forms;
 
 namespace TelerikXamarinApp5.Portable
@@ -13,7 +13,7 @@ namespace TelerikXamarinApp5.Portable
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new  MainPage());
 		}
 
 		protected override void OnStart ()

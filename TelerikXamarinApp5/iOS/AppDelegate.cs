@@ -22,8 +22,11 @@ namespace TelerikXamarinApp5.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new Portable.App());
 
+            Xamarin.FormsMaps.Init();
+
+            LoadApplication(new Portable.App());
+                       
             return base.FinishedLaunching(app, options);
         }
     }

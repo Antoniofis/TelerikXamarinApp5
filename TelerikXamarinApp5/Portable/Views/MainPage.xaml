@@ -15,7 +15,7 @@
         <ToolbarItem  Text="Click Here" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="trips">
+        <ListView x:Name="trips" ItemTapped="trips_ItemTapped" ItemsSource="{Binding LogEntries}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Title}"  Detail="{Binding Notes}"  />
