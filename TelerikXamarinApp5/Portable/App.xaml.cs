@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TelerikXamarinApp5.Portable;
+using TelerikXamarinApp5.Portable.Services;
+using TelerikXamarinApp5.Portable.ViewModels;
 using Xamarin.Forms;
 
 namespace TelerikXamarinApp5.Portable
@@ -13,8 +15,18 @@ namespace TelerikXamarinApp5.Portable
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new  MainPage());
-		}
+            var mainPage = new NavigationPage(new MainPage());
+
+            var navService = DependencyService.Get<INavService>() as XamarinFormsNavService;
+
+            navService.XamarinFormsNav = mainPage.Navigation;
+
+            navService.RegisterViewMapping(typeof(MainViewModel), typeof(MainPage));
+            navService.RegisterViewMapping(typeof(DetailViewModel), typeof(DetailPage));
+            navService.RegisterViewMapping(typeof(NewEntryViewModel), typeof(NewEntryPage));
+
+            MainPage = mainPage;
+        }
 
 		protected override void OnStart ()
 		{

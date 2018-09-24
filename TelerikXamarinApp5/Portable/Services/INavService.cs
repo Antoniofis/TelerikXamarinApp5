@@ -12,7 +12,7 @@ namespace TelerikXamarinApp5.Portable.Services
         bool CanGoBack { get; }
         Task GoBack();
         Task NavigateTo<TVM>() where TVM : BaseViewModel;
-        Task NavigateTo<TVM, TParameter>() where TVM : BaseViewModel;
+        Task NavigateTo<TVM, TParameter>(TParameter parameter) where TVM : BaseViewModel;
         Task RemoveLastView();
         Task ClearBackStack();
         Task NavigateToUri(Uri uri);

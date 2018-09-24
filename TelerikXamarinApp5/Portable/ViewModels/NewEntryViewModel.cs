@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using TelerikXamarinApp5.Portable.Models;
+using TelerikXamarinApp5.Portable.Services;
 using Xamarin.Forms;
 
 namespace TelerikXamarinApp5.Portable.ViewModels
 {
    public class NewEntryViewModel: BaseViewModel
     {
-        public NewEntryViewModel()
+        public NewEntryViewModel(INavService service): base(service)
         {
             Date = DateTime.Today;
             Rating = 1;

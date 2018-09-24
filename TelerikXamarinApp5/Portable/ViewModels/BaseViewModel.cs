@@ -4,15 +4,18 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TelerikXamarinApp5.Portable.Services;
 
 namespace TelerikXamarinApp5.Portable.ViewModels
 {
     public abstract class BaseViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected INavService NavService { get; private set; }
 
-        protected BaseViewModel()
+        protected BaseViewModel(INavService navService)
         {
+            NavService = navService;
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -32,7 +35,7 @@ namespace TelerikXamarinApp5.Portable.ViewModels
     public abstract class BaseViewModel<TParameter> : BaseViewModel
     {
 
-        protected BaseViewModel() : base() { }
+        protected BaseViewModel(INavService service) : base(service) { }
 
         public override async Task Init()
         {

@@ -4,14 +4,14 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using TelerikXamarinApp5.Portable.Models;
-
+using TelerikXamarinApp5.Portable.Services;
 
 namespace TelerikXamarinApp5.Portable.ViewModels
 {
    public class MainViewModel: BaseViewModel
     {
     
-        public MainViewModel()
+        public MainViewModel(INavService service):base(service)
         {
             LogEntries = new ObservableCollection<TripLogEntry>();
 
