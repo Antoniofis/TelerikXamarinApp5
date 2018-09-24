@@ -100,7 +100,7 @@ namespace TelerikXamarinApp5.Portable.Services
 
         async Task NavigateToView(Type viewModelType)
         {
-            Type viewType;
+            Type viewType; //Whole purpose is to use in try get value as out
 
             if (!_map.TryGetValue(viewModelType, out viewType))
             {
