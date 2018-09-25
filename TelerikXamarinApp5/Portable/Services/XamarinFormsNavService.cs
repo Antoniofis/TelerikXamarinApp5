@@ -106,11 +106,11 @@ namespace TelerikXamarinApp5.Portable.Services
             {
                 throw new ArgumentException("No view found in view mapping for " + viewModelType.FullName + ".");
             }
-            var constructor = viewType.GetTypeInfo()
-                                      .DeclaredConstructors
-                                      .FirstOrDefault(dc => dc.GetParameters().Count() <= 0);
+           ConstructorInfo constructor = viewType.GetTypeInfo()
+                                         .DeclaredConstructors
+                                         .FirstOrDefault(dc => dc.GetParameters().Count() <= 0);
 
-            var view = constructor.Invoke(null) as Page;
+            Page view = constructor.Invoke(null) as Page;
 
             await XamarinFormsNav.PushAsync(view, true);
         }
