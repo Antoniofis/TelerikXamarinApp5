@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TelerikXamarinApp5.Portable.Models;
 using TelerikXamarinApp5.Portable.ViewModels;
+using TelerikXamarinApp5.Portable.Services;
 using Xamarin.Forms;
 
 namespace TelerikXamarinApp5.Portable
@@ -15,8 +16,7 @@ namespace TelerikXamarinApp5.Portable
 		{
 			InitializeComponent();
 
-            BindingContext = new MainViewModel();
-
+            BindingContext = new MainViewModel(DependencyService.Get<INavService>());
 		}
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)

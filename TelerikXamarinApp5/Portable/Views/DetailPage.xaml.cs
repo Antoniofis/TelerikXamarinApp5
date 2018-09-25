@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 using TelerikXamarinApp5.Portable.ViewModels;
+using TelerikXamarinApp5.Portable.Services;
 
 namespace TelerikXamarinApp5.Portable
 {
@@ -20,7 +21,7 @@ namespace TelerikXamarinApp5.Portable
 		{
 			InitializeComponent ();
 
-            BindingContext = new DetailViewModel();
+            BindingContext = new DetailViewModel(DependencyService.Get<INavService>());
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(_vm.Entry.Latitude, _vm.Entry.Longitude), 

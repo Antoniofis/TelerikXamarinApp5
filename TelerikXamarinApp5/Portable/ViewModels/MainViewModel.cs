@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TelerikXamarinApp5.Portable.Models;
 using TelerikXamarinApp5.Portable.Services;
+using Xamarin.Forms;
 
 namespace TelerikXamarinApp5.Portable.ViewModels
 {
@@ -17,7 +18,7 @@ namespace TelerikXamarinApp5.Portable.ViewModels
 
         }
 
-
+       
         public override async Task Init()
         {
             await LoadEntries();
@@ -66,7 +67,7 @@ namespace TelerikXamarinApp5.Portable.ViewModels
 
         }
         ObservableCollection<TripLogEntry> _logEntries;
-       
+     
         public ObservableCollection<TripLogEntry> LogEntries
         {
             get { return _logEntries; }
